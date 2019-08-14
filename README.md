@@ -1,7 +1,7 @@
 # nfc_hce_reader
 
 nfc_hce_reader is Flutter plugin for reading NDEF messages on Android and iOS phones. Currently it reads messages from Android phones emulating tags via HCE.
-
+This plugin was inspired by [this](https://pub.dev/packages/nfc_in_flutter) plugin, by [this](https://github.com/underwindfall/NFCAndroid) and [this](https://github.com/underwindfall/NFCReaderiOS) repos.
 ## Usage
 ```
 StreamSubscription<String> subscription = NfcHceReader.readNFCStream()
@@ -102,5 +102,5 @@ Add `nfc_hce_reader` to your `pubspec.yaml`
 
 ```yaml
 dependencies:
-  nfc_hce_reader: 0.0.1
+  nfc_hce_reader: ^0.0.1
 ```

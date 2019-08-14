@@ -5,3 +5,16 @@
 ## 0.0.2
 
 * Description updated
+
+## 0.0.3
+
+* GitHub repo added
+
+## 0.0.4
+
+* Description updated
+
+## 0.0.5
+
+* Package name fixes
+

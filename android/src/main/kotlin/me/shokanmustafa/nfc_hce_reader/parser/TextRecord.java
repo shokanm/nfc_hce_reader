@@ -2,9 +2,6 @@ package me.shokanmustafa.nfc_hce_reader.parser;
 
 import android.nfc.NdefRecord;
 import android.util.Log;
-
-import com.qifan.readnfcmessage.parser.ParsedNdefRecord;
-
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 

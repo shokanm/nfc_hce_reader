@@ -1,8 +1,5 @@
-package com.qifan.readnfcmessage.parser
+package me.shokanmustafa.nfc_hce_reader.parser
 
-/**
- * Created by Qifan on 05/12/2018.
- */
 
 interface ParsedNdefRecord {
     fun str(): String

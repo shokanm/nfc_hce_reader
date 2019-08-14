@@ -8,13 +8,13 @@ import android.nfc.Tag
 import android.nfc.tech.Ndef
 import android.os.Bundle
 import android.os.Handler
-import com.qifan.readnfcmessage.parser.NdefMessageParser
 import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
+import me.shokanmustafa.nfc_hce_reader.parser.NdefMessageParser
 import java.io.IOException
 
 class NfcHceReaderPlugin(private var activity: Activity?) : MethodCallHandler, NfcAdapter.ReaderCallback, EventChannel.StreamHandler  {
