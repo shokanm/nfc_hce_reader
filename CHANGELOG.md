@@ -26,5 +26,13 @@
 
 * Redeclaration: NfcHceReaderPlugin error fix
 
+## 0.0.8
+
+* Added secondary constructor in NfcHceReaderPlugin
+
+## 0.0.9
+
+* Changed constructor in primary NfcHceReaderPlugin
+
 
 

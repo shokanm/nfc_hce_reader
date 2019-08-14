@@ -18,12 +18,12 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import me.shokanmustafa.nfc_hce_reader.parser.NdefMessageParser
 import java.io.IOException
 
-class NfcHceReaderPlugin() : MethodCallHandler, NfcAdapter.ReaderCallback, EventChannel.StreamHandler  {
+class NfcHceReaderPlugin: MethodCallHandler, NfcAdapter.ReaderCallback, EventChannel.StreamHandler  {
   private var mNfcAdapter: NfcAdapter? = null
   private var  mEventSink: EventChannel.EventSink? = null
   private var mActivity: Activity? = null
 
-  constructor(activity: Activity?) : this() {
+  constructor(activity: Activity?) {
     mActivity = activity
   }
   companion object {
