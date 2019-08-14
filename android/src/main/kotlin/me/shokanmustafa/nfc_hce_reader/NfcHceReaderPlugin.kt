@@ -1,6 +1,7 @@
 package me.shokanmustafa.nfc_hce_reader
 
 import android.app.Activity
+import android.app.Person
 import android.nfc.FormatException
 import android.nfc.NdefMessage
 import android.nfc.NfcAdapter
@@ -17,10 +18,14 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import me.shokanmustafa.nfc_hce_reader.parser.NdefMessageParser
 import java.io.IOException
 
-class NfcHceReaderPlugin(private var activity: Activity?) : MethodCallHandler, NfcAdapter.ReaderCallback, EventChannel.StreamHandler  {
+class NfcHceReaderPlugin() : MethodCallHandler, NfcAdapter.ReaderCallback, EventChannel.StreamHandler  {
   private var mNfcAdapter: NfcAdapter? = null
   private var  mEventSink: EventChannel.EventSink? = null
+  private var mActivity: Activity? = null
 
+  constructor(activity: Activity?) : this() {
+    mActivity = activity
+  }
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
@@ -33,7 +38,7 @@ class NfcHceReaderPlugin(private var activity: Activity?) : MethodCallHandler, N
   }
 
   fun initializeNFCReading():Boolean {
-    mNfcAdapter = NfcAdapter.getDefaultAdapter(activity)
+    mNfcAdapter = NfcAdapter.getDefaultAdapter(mActivity)
 
     if(!checkNFCEnable())
       return false
@@ -41,7 +46,7 @@ class NfcHceReaderPlugin(private var activity: Activity?) : MethodCallHandler, N
       return false
 
     val bundle = Bundle()
-    mNfcAdapter?.enableReaderMode(activity, this, NfcAdapter.FLAG_READER_NFC_A, bundle)
+    mNfcAdapter?.enableReaderMode(mActivity, this, NfcAdapter.FLAG_READER_NFC_A, bundle)
 
     return true
   }
@@ -97,7 +102,7 @@ class NfcHceReaderPlugin(private var activity: Activity?) : MethodCallHandler, N
   }
 
   private fun eventSuccess(result: Any) {
-    val mainThread = Handler(activity?.getMainLooper())
+    val mainThread = Handler(mActivity?.getMainLooper())
     val runnable = Runnable {
       if (mEventSink != null) {
         mEventSink?.success(result)

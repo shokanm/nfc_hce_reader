@@ -18,3 +18,13 @@
 
 * Package name fixes
 
+## 0.0.6
+
+* Kotlin Gradle plugin version fix
+
+## 0.0.7
+
+* Redeclaration: NfcHceReaderPlugin error fix
+
+
+
