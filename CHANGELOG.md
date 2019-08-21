@@ -34,5 +34,9 @@
 
 * Changed constructor in primary NfcHceReaderPlugin
 
+## 0.0.10
+
+* Fixes on message parsing on Android side
+
 
 
