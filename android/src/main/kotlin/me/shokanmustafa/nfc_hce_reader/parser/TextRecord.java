@@ -10,12 +10,16 @@ public class TextRecord implements ParsedNdefRecord {
     /**
      * ISO/IANA language code
      */
-    private final String mLanguageCode;
+    //private final String mLanguageCode;
 
     private final String mText;
 
-    public TextRecord(String languageCode, String text) {
-        this.mLanguageCode = languageCode;
+//    public TextRecord(String languageCode, String text) {
+//        this.mLanguageCode = languageCode;
+//        this.mText = text;
+//    }
+
+    public TextRecord(String text) {
         this.mText = text;
     }
 
@@ -38,15 +42,18 @@ public class TextRecord implements ParsedNdefRecord {
                  *
                  * Bits 5 to 0 are the length of the IANA language code.
                  */
-                String textEncoding = ((payload[0] & 0200) == 0) ? "UTF-8" : "UTF-16";
-                int languageCodeLength = payload[0] & 0077;
-                String languageCode = new String(payload, 1, languageCodeLength, "US-ASCII");
-                String text =
+                 /*String textEncoding = ((payload[0] & 0200) == 0) ? "UTF-8" : "UTF-16";
+                 int languageCodeLength = payload[0] & 0077;
+                 String languageCode = new String(payload, 1, languageCodeLength, "US-ASCII");
+                 String text =
                         new String(payload, languageCodeLength + 1,
                                 payload.length - languageCodeLength - 1, textEncoding);
+                                */
+
+                String text = new String(payload);
                 Log.e("werw", "inside try text="+text);
-                return new TextRecord(languageCode, text);
-            } catch (UnsupportedEncodingException e) {
+                return new TextRecord(text);
+            } catch (Exception e) {
                 // should never happen unless we get a malformed tag.
                 throw new IllegalArgumentException(e);
             }
@@ -75,7 +82,7 @@ public class TextRecord implements ParsedNdefRecord {
     /**
      * Returns the ISO/IANA language code associated with this text element.
      */
-    public String getLanguageCode() {
+    /*public String getLanguageCode() {
         return mLanguageCode;
-    }
+    }*/
 }

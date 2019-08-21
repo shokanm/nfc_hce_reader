@@ -37,7 +37,7 @@ class NFCHelper: NSObject, NFCNDEFReaderSessionDelegate {
         if let resultString = String(data: record.payload, encoding: .utf8) {
             print("resultString \(resultString)")
           onNFCResult(true, resultString)
-
+            session.invalidate()
         }
       }
     }

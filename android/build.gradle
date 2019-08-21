@@ -2,7 +2,7 @@ group 'me.shokanmustafa.nfc_hce_reader'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.3.0'
+    ext.kotlin_version = '1.3.10'
     repositories {
         google()
         jcenter()
