@@ -1,68 +1,21 @@
 PODS:
-  - barcode_scan (0.0.1):
-    - Flutter
-    - MTBBarcodeScanner
-  - connectivity (0.0.1):
-    - Flutter
-    - Reachability
   - Flutter (1.0.0)
-  - flutter_secure_storage (3.2.0):
-    - Flutter
-  - image_jpeg (0.0.1):
-    - Flutter
-  - image_picker (0.0.1):
-    - Flutter
-  - MTBBarcodeScanner (5.0.11)
   - nfc_hce_reader (0.0.1):
     - Flutter
-  - path_provider (0.0.1):
-    - Flutter
-  - Reachability (3.2)
 
 DEPENDENCIES:
-  - barcode_scan (from `.symlinks/plugins/barcode_scan/ios`)
-  - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
-  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
-  - image_jpeg (from `.symlinks/plugins/image_jpeg/ios`)
-  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - nfc_hce_reader (from `.symlinks/plugins/nfc_hce_reader/ios`)
-  - path_provider (from `.symlinks/plugins/path_provider/ios`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - MTBBarcodeScanner
-    - Reachability
 
 EXTERNAL SOURCES:
-  barcode_scan:
-    :path: ".symlinks/plugins/barcode_scan/ios"
-  connectivity:
-    :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
-  flutter_secure_storage:
-    :path: ".symlinks/plugins/flutter_secure_storage/ios"
-  image_jpeg:
-    :path: ".symlinks/plugins/image_jpeg/ios"
-  image_picker:
-    :path: ".symlinks/plugins/image_picker/ios"
   nfc_hce_reader:
     :path: ".symlinks/plugins/nfc_hce_reader/ios"
-  path_provider:
-    :path: ".symlinks/plugins/path_provider/ios"
 
 SPEC CHECKSUMS:
-  barcode_scan: 33f586d02270046fc6559135038b34b5754eaa4f
-  connectivity: c72716e202a1225ec4810740d5cb56b8ae3bf4cc
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
-  flutter_secure_storage: 0c5779648ff644110e507909b77a57e620cbbf8b
-  image_jpeg: 9701349a66166fcdeb83098dbef736036c6dc141
-  image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06
-  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   nfc_hce_reader: b7a6a26bb5f97b8c46d2e4461b95c8ea7a60a66d
-  path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
 PODFILE CHECKSUM: b6a0a141693093b304368d08511b46cf3d1d0ac5
 

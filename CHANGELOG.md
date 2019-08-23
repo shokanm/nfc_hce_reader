@@ -38,5 +38,9 @@
 
 * Fixes on message parsing on Android side
 
+## 0.0.11
+
+* Nfc availability check added, Start Nfc session button added on iOS side
+
 
 
