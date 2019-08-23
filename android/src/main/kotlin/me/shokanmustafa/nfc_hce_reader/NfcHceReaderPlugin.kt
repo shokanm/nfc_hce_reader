@@ -42,12 +42,13 @@ class NfcHceReaderPlugin: MethodCallHandler, NfcAdapter.ReaderCallback, EventCha
     return nfcAdapter.isEnabled
   }
 
-  fun initializeNFCReading() {
+  fun initializeNFCReading():Boolean  {
     mNfcAdapter = NfcAdapter.getDefaultAdapter(mActivity)
 
     val bundle = Bundle()
     mNfcAdapter?.enableReaderMode(mActivity, this, NfcAdapter.FLAG_READER_NFC_A, bundle)
 
+    return true
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {

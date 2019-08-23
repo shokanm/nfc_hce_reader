@@ -1,8 +1,6 @@
 package me.shokanmustafa.nfc_hce_reader.parser;
 
 import android.nfc.NdefRecord;
-import android.util.Log;
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 public class TextRecord implements ParsedNdefRecord {
@@ -27,7 +25,6 @@ public class TextRecord implements ParsedNdefRecord {
     public static TextRecord parse(NdefRecord record) {
         if (record.getTnf() == NdefRecord.TNF_WELL_KNOWN && Arrays.equals(record.getType(), NdefRecord.RTD_TEXT)) {
             try {
-                Log.e("werw", "inside try ");
                 byte[] payload = record.getPayload();
                 /*
                  * payload[0] contains the "Status Byte Encodings" field, per the
@@ -51,7 +48,6 @@ public class TextRecord implements ParsedNdefRecord {
                                 */
 
                 String text = new String(payload);
-                Log.e("werw", "inside try text="+text);
                 return new TextRecord(text);
             } catch (Exception e) {
                 // should never happen unless we get a malformed tag.

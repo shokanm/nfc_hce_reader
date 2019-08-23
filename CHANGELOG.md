@@ -42,5 +42,11 @@
 
 * Nfc availability check added, Start Nfc session button added on iOS side
 
+## 0.0.12
 
+* fix on Android side: added Boolean return value for ``` initializeNFCReading()```
+
+## 0.0.13
+
+* trying to fix Redeclaration error
 

@@ -25,10 +25,11 @@ class _MyAppState extends State<MyApp> {
     NfcHceReader.isNFCAvailable.then((supported){
       setState(() {
         _isNFCAvaliable = supported;
+        if(!_isPlatformIOS && _isNFCAvaliable)
+          initPlatformState();
       });
     });
-    if(!_isPlatformIOS && _isNFCAvaliable)
-      initPlatformState();
+
   }
 
   Future<void> initPlatformState() async {
@@ -79,7 +80,9 @@ class _MyAppState extends State<MyApp> {
               Text('isNFCEnabled $_isNFCAvaliable'),
               Visibility(
                 visible: _isPlatformIOS ,
-                child: FlatButton(onPressed: () => initPlatformState(),child: Text('Running on: $_message\n')),
+                child: FlatButton(onPressed: () => initPlatformState(),
+                    child: Text('Running on: $_message\n'),
+                ),
               ),
             ],
           )
