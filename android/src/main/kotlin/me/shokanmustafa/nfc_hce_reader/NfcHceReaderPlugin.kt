@@ -29,7 +29,7 @@ class NfcHceReaderPlugin: MethodCallHandler, NfcAdapter.ReaderCallback, EventCha
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      var nfchcereaderPlugin = NfcHceReaderPlugin(registrar.activity())
+      val nfchcereaderPlugin = NfcHceReaderPlugin(registrar.activity())
       val channel = MethodChannel(registrar.messenger(), "nfc_hce_reader")
       channel.setMethodCallHandler(nfchcereaderPlugin)
       val eventChannel = EventChannel(registrar.messenger(), "nfcDataStream")
@@ -37,26 +37,17 @@ class NfcHceReaderPlugin: MethodCallHandler, NfcAdapter.ReaderCallback, EventCha
     }
   }
 
-  fun initializeNFCReading():Boolean {
-    mNfcAdapter = NfcAdapter.getDefaultAdapter(mActivity)
+  fun isNFCEnabled(): Boolean {
+    val nfcAdapter = NfcAdapter.getDefaultAdapter(mActivity) ?: return false
+    return nfcAdapter.isEnabled
+  }
 
-    if(!checkNFCEnable())
-      return false
-    if(mNfcAdapter == null)
-      return false
+  fun initializeNFCReading() {
+    mNfcAdapter = NfcAdapter.getDefaultAdapter(mActivity)
 
     val bundle = Bundle()
     mNfcAdapter?.enableReaderMode(mActivity, this, NfcAdapter.FLAG_READER_NFC_A, bundle)
 
-    return true
-  }
-
-  private fun checkNFCEnable(): Boolean {
-    return if (mNfcAdapter == null) {
-      false
-    } else {
-      mNfcAdapter!!.isEnabled
-    }
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
@@ -65,6 +56,12 @@ class NfcHceReaderPlugin: MethodCallHandler, NfcAdapter.ReaderCallback, EventCha
       result.success(initializeNFCReading())
       return
     }
+
+    if (call.method == "isNFCAvailable") {
+      result.success(isNFCEnabled())
+      return
+    }
+
 
     result.notImplemented()
 

@@ -23,7 +23,14 @@ public class SwiftNfcHceReaderPlugin: NSObject, FlutterPlugin, FlutterStreamHand
             result(true)
         }
     }
+    if (call.method == "isNFCAvailable") {
+        DispatchQueue.main.async {
+            result(self.helper.isNfcEnabled())
+        }
+    }
   }
+    
+    
 
   func onNFCResult(success: Bool, msg: String) {
         DispatchQueue.main.async {

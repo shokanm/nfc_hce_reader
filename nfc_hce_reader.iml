@@ -13,6 +13,18 @@
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/build/intermediates/flutter/debug/android-arm/flutter_assets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/android/app/build/intermediates/flutter/debug/android-arm64/flutter_assets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/android/app/build/intermediates/flutter/debug/android-arm/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/android/app/build/intermediates/flutter/debug/android-arm64/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/build/app/intermediates/flutter/debug/android-arm/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/build/app/intermediates/flutter/debug/android-arm64/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/build/app/intermediates/merged_assets/debug/out/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/example/ios/.symlinks/plugins/nfc_hce_reader/example/ios/Flutter/App.framework/flutter_assets/packages" />
       <excludeFolder url="file://$MODULE_DIR$/example/ios/Flutter/App.framework/flutter_assets/packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />

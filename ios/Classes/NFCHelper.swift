@@ -15,6 +15,10 @@ class NFCHelper: NSObject, NFCNDEFReaderSessionDelegate {
     guard let onNFCResult = onNFCResult else { return }
     onNFCResult(false, error.localizedDescription)
   }
+    
+  func isNfcEnabled() -> Bool{
+    return NFCNDEFReaderSession.readingAvailable
+  }
 
   @available(iOS 11, *)
   func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
